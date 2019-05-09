@@ -15,7 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from apihack.core.views import home
 
 urlpatterns = [
+    path('<slug:app>/<slug:model>/<int:pk>/', home),
+    path('<slug:app>/<slug:model>/', home),
     path('admin/', admin.site.urls),
 ]
